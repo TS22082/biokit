@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {TextInput, Form} from 'biokit'
+import {TextInput, Form, FormGroup} from 'biokit'
 
 export default class App extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export default class App extends Component {
   render () {
     return (
       <Form sm={"12"} md={"12"} lg={"4"}>
-        <div className="form-group">
+        <FormGroup>
           <TextInput
             inputName={"Name"}
             type={"text"}
@@ -35,7 +35,7 @@ export default class App extends Component {
             handleChange={this.handleEmailChange}
             text={this.state.email}
           />
-        </div>
+        </FormGroup>
       </Form>
     )
   }
