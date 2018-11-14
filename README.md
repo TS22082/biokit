@@ -14,7 +14,7 @@ npm install --save biokit
 
 ```jsx
 import React, { Component } from 'react'
-import {TextInput, Form} from 'biokit'
+import {TextInput, Form, FormGroup, Card} from 'biokit'
 
 export default class App extends Component {
   constructor(props) {
