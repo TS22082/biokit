@@ -33,6 +33,16 @@ npm install --save biokit
 
 ## Usage
 
+This library assumes you have the latest bootstrap and mdi icons package imported through. The latest CDN links needed at the time of writing are:
+
+```html
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+```
+
 ```jsx
 import React, { Component } from 'react'
 import {TextInput, Form, FormGroup, Card} from 'biokit'
@@ -55,30 +65,33 @@ export default class App extends Component {
   };
   render () {
     return (
-      <Card
-        rounded={'0'}
-        spacing={'mt-0'}
-        icon={<i className='mdi mdi-grid mr-2'/>}
-        title={'Container List'}>
-        <Form sm={"12"} md={"12"} lg={"4"}>
-          <FormGroup>
-            <TextInput
-              inputName={"Name"}
-              type={"text"}
-              placeholder={"Please enter name"}
-              handleChange={this.handleNameChange}
-              text={this.state.name}
-            />
-            <TextInput
-              inputName={"Email"}
-              type={"email"}
-              placeholder={"Please enter name"}
-              handleChange={this.handleEmailChange}
-              text={this.state.email}
-            />
-          </FormGroup>
-        </Form>
-      </Card>
+      <Container
+        fluid={false}>
+        <Card
+          rounded={'0'}
+          spacing={'mt-0'}
+          icon={<i className='mdi mdi-grid mr-2'/>}
+          title={'Container List'}>
+          <Form sm={"12"} md={"12"} lg={"4"}>
+            <FormGroup>
+              <TextInput
+                inputName={"Name"}
+                type={"text"}
+                placeholder={"Please enter name"}
+                handleChange={this.handleNameChange}
+                text={this.state.name}
+              />
+              <TextInput
+                inputName={"Email"}
+                type={"email"}
+                placeholder={"Please enter name"}
+                handleChange={this.handleEmailChange}
+                text={this.state.email}
+              />
+            </FormGroup>
+          </Form>
+        </Card>
+      <Container/>
     )
   }
 }
