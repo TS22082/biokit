@@ -4,6 +4,13 @@
 
 [![NPM](https://img.shields.io/npm/v/biokit.svg)](https://www.npmjs.com/package/biokit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## COntribute
+
+```bash
+git clone https://github.com/TS22082/biokit.git
+```
+
+
 ## Install
 
 ```bash
