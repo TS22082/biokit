@@ -4,12 +4,26 @@
 
 [![NPM](https://img.shields.io/npm/v/biokit.svg)](https://www.npmjs.com/package/biokit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-## COntribute
+## Clone project
 
 ```bash
 git clone https://github.com/TS22082/biokit.git
+cd biokit
+npm install
 ```
 
+## Work on project
+
+```bash
+cd biokit
+npm run
+```
+create new tab or new terminal window and navigate to root folder of project
+
+```bash
+cd example
+npm run
+```
 
 ## Install
 
