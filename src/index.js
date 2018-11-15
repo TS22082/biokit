@@ -2,5 +2,6 @@ import TextInput from './TextInput/TextInput';
 import Form from './Form/Form';
 import FormGroup from './FormGroup/FormGroup';
 import Card from './Card/Card';
+import Container from './Container/Container';
 
-export {TextInput, Form, FormGroup, Card}
+export {TextInput, Form, FormGroup, Card, Container}
