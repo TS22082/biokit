@@ -50,6 +50,16 @@ export default class TextInput extends Component {
           <label style={notValid}>@ is required!</label>
         )
       }
+      case 'password':
+      if(this.props.text.length > 0){
+        return (
+          <label style={valid}>{this.props.inputTitle} looks good!</label>
+        )
+      } else {
+        return (
+          <label style={notValid}>{this.props.inputTitle} is required!</label>
+        )
+      } 
       default:
         return (<label/>)
     }
@@ -63,7 +73,7 @@ export default class TextInput extends Component {
     return (
       <div>
         {this.showName()}
-        <input type="text" 
+        <input type={this.props.type} 
           className="form-control" 
           onChange={this.props.handleChange}
           placeholder={this.props.placeholder}
