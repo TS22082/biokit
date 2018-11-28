@@ -33,17 +33,17 @@ export default class TextInput extends Component {
       case 'text':
       if(this.props.text.length > 0){
         return (
-          <label style={valid}>{this.props.inputName} looks good!</label>
+          <label style={valid}>{this.props.inputTitle} looks good!</label>
         )
       } else {
         return (
-          <label style={notValid}>{this.props.inputName} is required!</label>
+          <label style={notValid}>{this.props.inputTitle} is required!</label>
         )
       } 
       case 'email':
       if (this.props.text.includes('@')){
         return (
-          <label style={valid}>{this.props.inputName} looks Good</label>
+          <label style={valid}>{this.props.inputTitle} looks good</label>
         )        
       } else {
         return (
@@ -56,7 +56,7 @@ export default class TextInput extends Component {
   }
   showName = () => {
     return(
-      <label className="label">{this.props.inputName}</label>
+      <label className="label">{this.props.inputTitle}</label>
     )
   }
   render() {

@@ -21,7 +21,7 @@ export default class App extends Component {
     return (
       <Container
         fluid={false}>
-        <Column sm={'12'} md={'12'} lg={'12'}>
+        <Column sm={'4'} md={'4'} lg={'4'}>
           <Card
             rounded={'0'}
             spacing={'mt-0'}
@@ -30,14 +30,14 @@ export default class App extends Component {
             <Form>
               <FormGroup>
                 <TextInput
-                  inputName={'Name'}
+                  inputTitle={'Name'}
                   type={'text'}
                   placeholder={'Please enter name'}
                   handleChange={this.handleNameChange}
                   text={this.state.name}
                 />
                 <TextInput
-                  inputName={'Email'}
+                  inputTitle={'Email'}
                   type={'email'}
                   placeholder={'Please enter name'}
                   handleChange={this.handleEmailChange}
