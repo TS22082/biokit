@@ -74,7 +74,7 @@ export default class TextInput extends Component {
       <div>
         {this.showName()}
         <input type={this.props.type} 
-          className="form-control" 
+          className="form-control bg-dark text-light" 
           onChange={this.props.handleChange}
           placeholder={this.props.placeholder}
         />

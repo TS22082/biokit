@@ -14,7 +14,7 @@ export default class Card extends Component {
             {this.props.icon} {this.props.title}
           </h4>
         </div>
-        <div className="card-body">{this.props.children}</div>
+        <div className="card-body bg-dark text-light">{this.props.children}</div>
       </div>
     );
   }
