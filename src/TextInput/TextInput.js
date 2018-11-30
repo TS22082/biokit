@@ -6,10 +6,10 @@ import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 
 const valid={
-  color: 'green'
+  color: '#28a745'
 }
 const notValid={
-  color:'red'
+  color:'#dc3545'
 }
 
 export default class TextInput extends Component {
@@ -74,7 +74,7 @@ export default class TextInput extends Component {
       <div>
         {this.showName()}
         <input type={this.props.type} 
-          className="form-control bg-dark text-light" 
+          className="form-control bg-light text-dark" 
           onChange={this.props.handleChange}
           placeholder={this.props.placeholder}
         />

@@ -17,6 +17,10 @@ export default class App extends Component {
     const email = e.target.value;
     this.setState({ email });
   };
+  alertMessage = e => {
+    e.preventDefault();
+    alert("working");
+  }
   render () {
     return (
       <Container
@@ -28,7 +32,8 @@ export default class App extends Component {
               spacing={'mt-0'}
               icon={<i className='mdi mdi-account-box mr-2'/>}
               title={'Sign In'}>
-              <Form>
+              <Form 
+                does={this.alertMessage}>
                 <FormGroup>
                   <TextInput
                     inputTitle={'Password'}
