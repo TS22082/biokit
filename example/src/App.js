@@ -32,8 +32,7 @@ export default class App extends Component {
               spacing={'mt-0'}
               icon={<i className='mdi mdi-account-box mr-2'/>}
               title={'Sign In'}>
-              <Form 
-                does={this.alertMessage}>
+              <Form>
                 <FormGroup>
                   <TextInput
                     inputTitle={'Password'}

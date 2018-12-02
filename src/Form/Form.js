@@ -8,8 +8,7 @@ export default class Form extends Component {
         col-sm-${this.props.sm} 
         col-md-${this.props.md} 
         col-lg-${this.props.lg}
-        `}
-        onSubmit={this.props.does}>
+        `}>
         {this.props.children}
       </form> 
     );

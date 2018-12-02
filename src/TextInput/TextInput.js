@@ -11,6 +11,19 @@ const valid={
 const notValid={
   color:'#dc3545'
 }
+const required={
+  color:'#95a5a6'
+}
+
+validPassword = (inputtxt) => { 
+  let goodPass=  /^[A-Za-z]\w{7,14}$/
+  if(inputtxt.value.match(goodPass)){ 
+    return true;
+  }
+  else{ 
+    return false;
+  }
+}
 
 export default class TextInput extends Component {
   static propTypes = {
@@ -31,35 +44,39 @@ export default class TextInput extends Component {
     let textType = this.props.type
     switch(textType){
       case 'text':
-      if(this.props.text.length > 0){
-        return (
-          <label style={valid}>{this.props.inputTitle} looks good!</label>
-        )
-      } else {
-        return (
-          <label style={notValid}>{this.props.inputTitle} is required!</label>
-        )
-      } 
+        if(this.props.text.length > 0){
+          return (
+            <label style={valid}>{this.props.inputTitle} looks good!</label>
+          )
+        } else {
+          return (
+            <label style={required}>required</label>
+          )
+        } 
       case 'email':
-      if (this.props.text.includes('@')){
-        return (
-          <label style={valid}>{this.props.inputTitle} looks good</label>
-        )        
-      } else {
-        return (
-          <label style={notValid}>@ is required!</label>
-        )
-      }
+        if (this.props.text.includes('@')){
+          return (
+            <label style={valid}>{this.props.inputTitle} looks good</label>
+          )        
+        } else if(this.props.text.length > 0 && !this.props.text.includes('@')) {
+          return(
+          <label style={notValid}>{this.props.inputTitle} requires '@'</label>
+          )
+        } else {
+          return (
+            <label style={required}>required</label>
+          )
+        }
       case 'password':
-      if(this.props.text.length > 0){
-        return (
-          <label style={valid}>{this.props.inputTitle} looks good!</label>
-        )
-      } else {
-        return (
-          <label style={notValid}>{this.props.inputTitle} is required!</label>
-        )
-      } 
+        if(this.props.text.length > 0){
+          return (
+            <label style={valid}>{this.props.inputTitle} looks good!</label>
+          )
+        } else {
+          return (
+            <label style={required}>required</label>
+          )
+        } 
       default:
         return (<label/>)
     }
