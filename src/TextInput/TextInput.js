@@ -15,19 +15,17 @@ const required={
   color:'#95a5a6'
 }
 
-validPassword = (inputtxt) => { 
-  let goodPass=  /^[A-Za-z]\w{7,14}$/
-  if(inputtxt.value.match(goodPass)){ 
-    return true;
-  }
-  else{ 
-    return false;
-  }
-}
-
 export default class TextInput extends Component {
   static propTypes = {
+    inputTitle: PropTypes.string,
+    type: PropTypes.oneOf([
+      'text', 'email', 'password'
+    ]).isRequired,
+    placeholder: PropTypes.string,
     text: PropTypes.string
+  }
+  static defaultProps = {
+    
   }
   constructor(){
     super()
@@ -35,6 +33,15 @@ export default class TextInput extends Component {
       text:''
     }
     this.handleTextChange = this.handleTextChange.bind(this)
+  }
+  validPassword = (inputtxt) => { 
+    let goodPass=  /^[A-Za-z]\w{7,14}$/
+    if(inputtxt.value.match(goodPass)){ 
+      return true;
+    }
+    else{ 
+      return false;
+    }
   }
   handleTextChange = e => {
     const text = e.target.value
@@ -101,3 +108,5 @@ export default class TextInput extends Component {
     );
   }
 }
+
+
