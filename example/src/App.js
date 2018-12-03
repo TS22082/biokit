@@ -10,7 +10,6 @@ export default class App extends Component {
       pw: '',
       pw2: '',
     };
-
   }
   handleNameChange = e => {
     const name = e.target.value;
@@ -36,7 +35,7 @@ export default class App extends Component {
       return false
     }
   }
-  
+
   validPw = (pw) => {
     var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
     return re.test(pw)
@@ -58,6 +57,7 @@ export default class App extends Component {
                   <TextInput
                     inputTitle={'Username'}
                     type={'text'}
+                    name={'name'}
                     placeholder={'Please enter text'}
                     handleChange={this.handleNameChange}
                     text={this.state.name}
@@ -66,6 +66,7 @@ export default class App extends Component {
                   <TextInput
                     inputTitle={'Email'}
                     type={'email'}
+                    name={'email'}
                     placeholder={'Please enter name'}
                     handleChange={this.handleEmailChange}
                     text={this.state.email}
@@ -74,6 +75,7 @@ export default class App extends Component {
                   <TextInput
                     inputTitle={'Password'}
                     type={'password'}
+                    name={'password'}
                     placeholder={'Please enter password'}
                     handleChange={this.handlePwChange}
                     text={this.state.pw}
@@ -84,6 +86,7 @@ export default class App extends Component {
                   <TextInput
                     inputTitle={'Password'}
                     type={'password'}
+                    name={'pw'}
                     placeholder={'Please repeat password'}
                     handleChange={this.handlePw2Change}
                     text={this.state.pw2}
@@ -93,6 +96,18 @@ export default class App extends Component {
                   />
                 </FormGroup>
               </Form>
+            </Card>
+          </Column>
+          <Column sm={'12'} md={'12'} lg={'6'}>
+            <Card
+              rounded={'0'}
+              spacing={'mt-0'}
+              icon={<i className='mdi mdi-account-box mr-2'/>}
+              title={'example card with content'}>
+              <h3>Inspirational quote</h3>
+              <p>Not every day is going to offer us a chance to save somebody's life, but every day offers us an opportunity to affect one.</p>
+              <p>- Mark Bezos</p>
+              <iframe width="100%" height="350" src="https://www.youtube.com/embed/GVG4wgCqeEQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </Card>
           </Column>
         </Row>
