@@ -15,7 +15,7 @@ export default class Container extends Component {
   state = {  }
   render() {
     return ( 
-      <div className={this.setClass}>
+      <div className={this.setClass()}>
         {this.props.children}
       </div>
     );
