@@ -5,7 +5,6 @@
 import React, { Component } from 'react';
 
 export default class Card extends Component {
-  state = {  }
   render() { 
     return ( 
       <div className={`card rounded-${this.props.rounded} ${this.props.spacing}`}>
