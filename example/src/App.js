@@ -36,7 +36,7 @@ export default class App extends Component {
       return false
     }
   }
-
+  
   validPw = (pw) => {
     var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
     return re.test(pw)
