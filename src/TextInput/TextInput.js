@@ -20,12 +20,23 @@ export default class TextInput extends Component {
     inputTitle: PropTypes.string,
     type: PropTypes.oneOf([
       'text', 'email', 'password'
-    ]).isRequired,
+    ]),
+    theme: PropTypes.oneOf([
+      'light', 'dark'
+    ]),
+    trueWhen: PropTypes.oneOf([
+      true, false, 'default'
+    ]),
+    falseMessage: PropTypes.string,
     placeholder: PropTypes.string,
-    text: PropTypes.string
+    text: PropTypes.string,
+    
   }
   static defaultProps = {
-    
+    type: 'text',
+    theme: 'light',
+    trueWhen: 'default',
+    falseMessage: 'password does not meet requirements'
   }
   constructor(){
     super()
@@ -34,15 +45,7 @@ export default class TextInput extends Component {
     }
     this.handleTextChange = this.handleTextChange.bind(this)
   }
-  validPassword = (inputtxt) => { 
-    let goodPass=  /^[A-Za-z]\w{7,14}$/
-    if(inputtxt.value.match(goodPass)){ 
-      return true;
-    }
-    else{ 
-      return false;
-    }
-  }
+  
   handleTextChange = e => {
     const text = e.target.value
     this.setState({text})
@@ -65,8 +68,8 @@ export default class TextInput extends Component {
           return (
             <label style={valid}>{this.props.inputTitle} looks good</label>
           )        
-        } else if(this.props.text.length > 0 && !this.props.text.includes('@')) {
-          return(
+        } else if (this.props.text.length > 0 && !this.props.text.includes('@')) {
+          return (
           <label style={notValid}>{this.props.inputTitle} requires '@'</label>
           )
         } else {
@@ -76,14 +79,20 @@ export default class TextInput extends Component {
         }
       case 'password':
         if(this.props.text.length > 0){
-          return (
-            <label style={valid}>{this.props.inputTitle} looks good!</label>
-          )
+          if(this.props.trueWhen === true){
+            return (
+              <label style={valid}>{this.props.inputTitle} looks good!</label>
+            )
+          } else {
+            return (
+              <label style={notValid}>{this.props.falseMessage}</label>
+            )
+          }
         } else {
           return (
             <label style={required}>required</label>
           )
-        } 
+        }
       default:
         return (<label/>)
     }
@@ -93,13 +102,23 @@ export default class TextInput extends Component {
       <label className="label">{this.props.inputTitle}</label>
     )
   }
+
+  textTheme = () => {
+    switch(this.props.theme){
+      case 'light':
+        return('form-control bg-light text-dark')
+      case 'dark':
+        return('form-control bg-dark text-light')  
+    }
+  }
+  
   render() {
     return (
       <div>
         {this.showName()}
         <input type={this.props.type} 
           name={this.props.name}
-          className="form-control bg-light text-dark" 
+          className={this.textTheme()}
           onChange={this.props.handleChange}
           placeholder={this.props.placeholder}
         />
