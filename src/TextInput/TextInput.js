@@ -45,7 +45,6 @@ export default class TextInput extends Component {
     }
     this.handleTextChange = this.handleTextChange.bind(this)
   }
-  
   handleTextChange = e => {
     const text = e.target.value
     this.setState({text})
